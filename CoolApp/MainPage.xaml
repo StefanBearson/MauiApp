@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		xmlns:viewmodels="clr-namespace:CoolApp.MVVM.ViewModels"
+		x:DataType="viewmodels:PersonVm"
+			 x:Class="CoolApp.MainPage">
+
+    <ContentPage.Resources>
+
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout
+            VerticalOptions="Center"
+            Padding="30,0"
+            Spacing="25">
+            <Label
+                Text="Hej"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1"/>
+
+            <Label
+                Text="This is a fancy label"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"/>
+
+            <HorizontalStackLayout>
+                <Label Text="Name:"/>
+                <Label Text="{Binding Name}"
+                    Padding="10,0,0,0"
+                       SemanticProperties.HeadingLevel="Level3"
+                       SemanticProperties.Description="This is the name of the person"/>
+            </HorizontalStackLayout>
+
+
+            <Button
+                Style="{StaticResource OkButton}"
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill"/>
+            <Grid RowSpacing="10"
+                  ColumnSpacing="10"
+                  IsVisible="{Binding IsCool}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border
+                    x:Name="border"
+                    HeightRequest="100"
+                    Stroke="Black"
+                    StrokeThickness="2"
+                    HorizontalOptions="Fill"
+                    Grid.Row="0"
+                    Grid.Column="0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="8"/>
+                    </Border.StrokeShape>
+                    <BoxView
+                        HeightRequest="100"
+                        BackgroundColor="LightGray"
+                        HorizontalOptions="Fill"
+                        CornerRadius="8"
+                        Grid.Row="0"
+                        Grid.Column="0"/>
+                </Border>
+                <BoxView
+                    HeightRequest="100"
+                    BackgroundColor="#FF5B6049"
+                    HorizontalOptions="Fill"
+                    CornerRadius="8"
+                    Grid.Row="0"
+                    Grid.Column="1"/>
+
+                <BoxView
+                    HeightRequest="100"
+                    BackgroundColor="#FF877070"
+                    HorizontalOptions="Fill"
+                    CornerRadius="8"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"/>
+            </Grid>
+            <Button
+                Style="{StaticResource AlertButton}"
+                Clicked="OnMe"
+                Text="Change The Things"/>
+            <SearchBar
+                Placeholder="Search"
+                SearchButtonPressed="SearchIt"/>
+
+            <Entry
+                Placeholder="Enter text"
+                Completed="OnCompleted"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

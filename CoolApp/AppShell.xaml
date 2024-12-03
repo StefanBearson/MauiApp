@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="CoolApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:CoolApp"
+    xmlns:infoPage="clr-namespace:CoolApp.MVVM.Views"
+    Title="CoolApp">
+
+    <Shell.FlyoutBackgroundColor>
+        <OnPlatform x:TypeArguments="Color">
+            <On Platform="iOS" Value="#10001111"/>
+            <On Platform="Android" Value="Gray"/>
+        </OnPlatform>
+    </Shell.FlyoutBackgroundColor>
+
+    <Shell.FlyoutHeader>
+        <StackLayout BackgroundColor="#90001111">
+            <Label Text="Cool menu app" FontSize="Large" HorizontalOptions="End" TextColor="White" Padding="10" />
+        </StackLayout>
+    </Shell.FlyoutHeader>
+    <FlyoutItem Title="Menu">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Info">
+        <ShellContent ContentTemplate="{DataTemplate infoPage:InfoPage}"/>
+    </FlyoutItem>
+
+</Shell>
