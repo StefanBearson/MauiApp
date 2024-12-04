@@ -24,9 +24,14 @@ public partial class InfoPage : ContentPage
 		base.OnAppearing();
 		loadDiseases();
 	}
-	private void Button_Clicked(object sender, EventArgs e)
+	private void Load_List(object sender, EventArgs e)
 	{
 		loadDiseases();
+	}
+
+	private void Empty_List(object sender, EventArgs e)
+	{
+		diseasesCollection.Clear();
 	}
 
 	private void loadDiseases()

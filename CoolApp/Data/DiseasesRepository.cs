@@ -57,7 +57,7 @@ namespace CoolApp.Data
             }
         }
 
-        public Disease GetDisease(int id)
+        public Disease? GetDisease(int id)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace CoolApp.Data
             return null;
         }
 
-        public List<Disease> GetAllDiseases()
+        public List<Disease>? GetAllDiseases()
         {
             try
             {

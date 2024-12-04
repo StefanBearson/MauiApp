@@ -9,12 +9,12 @@ namespace CoolApp.MVVM.Models
         public int Id { get; set; }
 
         [Column("Name"), Indexed, NotNull]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Column("Image")]
-        public string Image { get; set; }
+        public string? Image { get; set; }
 
         [Column("Description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
     }
 }

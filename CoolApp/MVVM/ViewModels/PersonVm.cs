@@ -4,7 +4,7 @@ namespace CoolApp.MVVM.ViewModels;
 
 public class PersonVm: ObservableObject
 {
-  private string name;
+  private string? name;
   private int age;
   private bool isCool;
   public string Name
